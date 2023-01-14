@@ -7,8 +7,8 @@ class Api {
 
     // URL settings
     private static $protocol = "https://";
-    private static $socket = "ceshops.ru:8443";
-    private static $baseName = "it";
+    private static $socket = "ceshops.ru:8443/";
+    private static $baseName = "/it/";
     private static $uriApi = "hs/api_debug/v1";
     
     protected static function getFullUrl() {
@@ -28,5 +28,13 @@ class Api {
             case "POST": 
                 curl_setopt($ch, CURLOPT_POST, true);
         }
+    }
+
+    protected static function setUrl($ch, $url) {
+        curl_setopt($ch, CURLOPT_URL, $url);
+    }
+
+    protected static function setReturnTransfer($ch) {
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     }
 }

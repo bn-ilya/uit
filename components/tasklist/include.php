@@ -6,4 +6,5 @@ include $this->componentPath . 'classes/tasklistcontr.classes.php';
 include $this->componentPath . 'classes/tasklistview.classes.php';
 
 $taskview = new TaskListView();
-$taskview->showTasks();
+$arResult["TASKS"] = $taskview->getTasks();
+echo $arResult["TASKS"];

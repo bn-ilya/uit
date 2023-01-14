@@ -1,8 +1,8 @@
 <?php 
 
 class TasklistView extends Tasklist {
-    public function showTasks() {
+    public function getTasks() {
         $tasks = $this->getAllTasks();
-        echo $tasks;
+        return $tasks;
     }
 }
